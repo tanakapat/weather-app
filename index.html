@@ -20,16 +20,18 @@
 						type="search"
 						placeholder="Enter a city.."
 						required
-						class="search-input" />
+						class="search-input"
+						id="search-form-input" />
 					<input type="submit" value="Search" class="search-button" />
 				</form>
 			</header>
 			<main>
 				<div class="current-weather">
 					<div>
-						<h1 class="current-city">Paris</h1>
+						<h1 class="current-city" id="new-city">Paris</h1>
 						<p id="current-details">
-							Saturday 15:32, moderate rain<br />
+							Saturday 15:32, <span id="weather-description">moderate rain</span
+							><br />
 							Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
 						</p>
 					</div>
