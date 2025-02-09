@@ -2,10 +2,13 @@ function updateWeather(response) {
     let temperatureElement = document.querySelector("#current-temperature");
     let temperature = response.data.temperature.current;
 
-   let currentCityElement = document.querySelector("#new-city");
+    let currentCityElement = document.querySelector("#new-city");
 
+    let weatherDescriptionElement = document.querySelector("#weather-description");
+   
     currentCityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML = Math.round(temperature);
+    weatherDescriptionElement.innerHTML = response.data.condition.description;
 };
 
 function searchCity(city) {
@@ -26,4 +29,5 @@ let searchFormElement = document.querySelector("#city-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit)
 
 
+searchCity("Stockholm")
 
