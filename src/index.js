@@ -13,13 +13,16 @@ function updateWeather(response) {
     let timeElement = document.querySelector("#time");
 
     let date = new Date(response.data.time * 1000);
-   
+
+    let weatherIcon = document.querySelector("#updated-icon");
+
     currentCityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML = Math.round(temperature);
     weatherDescriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
     timeElement.innerHTML = formatDate(date);
+    weatherIcon.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-temperature-icon" />`
 };
 
 function searchCity(city) {
@@ -30,9 +33,7 @@ function searchCity(city) {
 
 function handleSearchSubmit(event) {
     event.preventDefault();
-
-    let searchInput = document.querySelector("#search-form-input");
-    
+    let searchInput = document.querySelector("#search-form-input");    
     searchCity(searchInput.value);
 };
 
