@@ -5,10 +5,13 @@ function updateWeather(response) {
     let currentCityElement = document.querySelector("#new-city");
 
     let weatherDescriptionElement = document.querySelector("#weather-description");
+
+    let humidityElement = document.querySelector("#humidity");
    
     currentCityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML = Math.round(temperature);
     weatherDescriptionElement.innerHTML = response.data.condition.description;
+    humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 };
 
 function searchCity(city) {
